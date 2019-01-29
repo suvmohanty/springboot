@@ -6,6 +6,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+
+/**
+ * Author : Rahul Wagh
+ **/
 @SpringBootApplication
 public class SpringBootCommandLineRunner implements CommandLineRunner {
 
@@ -21,6 +26,8 @@ public class SpringBootCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         LOG.info("EXECUTING : command line runner");
+
+        LOG.info("ARGS : - {}", Arrays.toString(args));
 
         for(int i=0;i<=10;i++){
             LOG.info("Count ="+i);
