@@ -34,3 +34,19 @@ subprojects{
     }
 }
 
+project(':spring-boot-dev-tools'){
+
+    configurations {
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+    }
+
+    dependencies {
+        compile project(':spring-boot-app')
+        compile ("org.springframework.boot:spring-boot-starter-web")
+        developmentOnly("org.springframework.boot:spring-boot-devtools")
+    }
+
+}
