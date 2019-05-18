@@ -44,7 +44,21 @@ project(':spring-boot-dev-tools'){
     }
 
     dependencies {
-        compile project(':spring-boot-app')
+        compile ("org.springframework.boot:spring-boot-starter-web")
+        developmentOnly("org.springframework.boot:spring-boot-devtools")
+    }
+
+}
+project(':spring-boot-dev-tools-restart-trigger-file'){
+
+    configurations {
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+    }
+
+    dependencies {
         compile ("org.springframework.boot:spring-boot-starter-web")
         developmentOnly("org.springframework.boot:spring-boot-devtools")
     }
