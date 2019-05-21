@@ -15,8 +15,7 @@ public class SpringBootDevTools {
             .getLogger(SpringBootDevTools.class);
 
     public static void main(String[] args) {
-        LOG.info("STARTING : Spring boot application starting");
-        SpringApplication.run(SpringBootDevTools.class,args);
-        LOG.info("Spring boot application");
+        LOG.info("STARTING - Updating for testing restart on build : Spring boot application starting");
+        SpringApplication.run(SpringBootDevTools.class);
     }
 }
