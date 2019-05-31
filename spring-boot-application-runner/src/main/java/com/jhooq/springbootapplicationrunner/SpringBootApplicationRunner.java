@@ -12,6 +12,7 @@ import java.util.Set;
 
 /**
  * @author Rahul Wagh
+ * Example runtime arguments : - nonoptionarg --optionalArg1=Jhooq --optionalArg2=ApplicationRunner
  */
 public class SpringBootApplicationRunner implements ApplicationRunner {
 
@@ -29,12 +30,12 @@ public class SpringBootApplicationRunner implements ApplicationRunner {
         LOG.info("EXECUTING : Run method of Application Runner");
         final List<String> nonOptionArgs = args.getNonOptionArgs();
         final String[] sourceArgs = args.getSourceArgs();
-        final Set<String>  optionNames = args.getOptionNames();
+        final Set<String> optionNames = args.getOptionNames();
 
-        nonOptionArgs.forEach(nonOption -> LOG.info("## Non Option Args : "+nonOption));
-        optionNames.forEach(option -> LOG.info("## Option Names    : "+option));
-        Arrays.stream(sourceArgs).forEach(srcArgs ->LOG.info("## Source Args     : "+srcArgs));
-        LOG.info("## Option Value of --app.hosts : "+args.getOptionValues("app.hosts"));
-        LOG.info("## Option Value of --app.name : "+args.getOptionValues("app.name"));
-}
+        nonOptionArgs.forEach(nonOption -> LOG.info("## Non Option Args : " + nonOption));
+        optionNames.forEach(option -> LOG.info("## Option Names    : " + option));
+        Arrays.stream(sourceArgs).forEach(srcArgs -> LOG.info("## Source Args     : " + srcArgs));
+        LOG.info("## Option Value of --optionalArg1 : " + args.getOptionValues("optionalArg1"));
+        LOG.info("## Option Value of --optionalArg2 : " + args.getOptionValues("optionalArg2"));
+    }
 }
