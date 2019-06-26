@@ -64,3 +64,10 @@ project(':spring-boot-dev-tools-restart-trigger-file'){
     }
 
 }
+project(':spring-boot-rest-controller'){
+    
+    dependencies {
+        compile ("org.springframework.boot:spring-boot-starter-web")
+    }
+
+}
